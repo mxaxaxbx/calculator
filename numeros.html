@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>numeros</title>
+    <style>
+        .flex {
+            display: flex;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+        }
+        .border {
+            border: 1px dashed black;
+            width: 45vw;
+            padding: 10px;
+        }
+        .center{
+            text-align: center;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        input {
+            border: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div class="border">
+            <h3>Letras</h3>
+            <input type="text" id="letras" readonly>
+            <hr/>
+            <h3>Números</h3>
+            <input type="text" id="numeros" readonly>
+        </div>
+
+        <div class="border center">
+            <button id="a1">A-1</button>
+            <button id="b2">B-2</button>
+            <button id="c3">C-3</button>
+            <br/><br/>
+            <button id="d4">D-4</button>
+            <button id="e5">E-5</button>
+            <button id="f6">F-6</button>
+            <br/><br/>
+            <button id="g7">G-7</button>
+            <button id="h8">H-8</button>
+            <button id="i9">I-9</button>
+            <br/><br/>
+            <button class="hidden"></button>
+            <button id="j0">J-0</button>
+            <button class="hidden"></button>
+            <br/><br/>
+        </div>
+    </div>
+
+    <script src="ej3.js"></script>
+</body>
+</html>

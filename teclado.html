@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>teclado virtual</title>
+    <style>
+        .flex {
+            display: inline-block;
+            height: 80vh;
+            width: 100vw;
+            align-items: center;
+            justify-content: center;
+        }
+        .border {
+            width: 95vw;
+            border: 1px dashed black;
+            margin-top: 25px;
+            padding: 10px;
+        }
+        .center{
+            text-align: center;
+            margin-top: 25px;
+        }
+        #teclado {
+            margin: 0 auto;
+            text-align: left;
+            width: 70%;
+        }
+        .hidden {
+            visibility: hidden;
+        }
+        #input {
+            white-space: pre-line
+        }
+    </style>
+</head>
+<body>
+    <div class="flex">
+        <div class="border">
+            <h3>entrada</h3>
+            <div id="input" style="border: 1px solid black; height: 250px;"></div>
+        </div>
+
+        <div class="center">
+            <div id="teclado">
+                <button class="esc">Esc</button>
+                <button class="pipe">°</button>
+                <button id="one">1</button>
+                <button id="two">2</button>
+                <button id="three">3</button>
+                <button id="four">4</button>
+                <button id="five">5</button>
+                <button id="six">6</button>
+                <button id="seven">7</button>
+                <button id="eight">8</button>
+                <button id="nine">9</button>
+                <button id="zero">0</button>
+                <button id="question">?</button>
+                <button id="admiration">¡</button>
+                <button id="eraser">Borrar</button>
+                <br/>
+                <button class="tab">TAB</button>
+                <button id="q">q</button>
+                <button id="w">w</button>
+                <button id="e">e</button>
+                <button id="r">r</button>
+                <button id="t">t</button>
+                <button id="y">y</button>
+                <button id="u">u</button>
+                <button id="i">i</button>
+                <button id="o">o</button>
+                <button id="p">p</button>
+                <button class="accent">¨</button>
+                <button class="plus">+</button>
+                <button id="enter" style="width: 50px; height: 50px;">Entrar</button>
+                <br/>
+                <button class="bloqMay">Bloq May</button>
+                <button id="a">a</button>
+                <button id="s">s</button>
+                <button id="d">d</button>
+                <button id="f">f</button>
+                <button id="g">g</button>
+                <button id="h">h</button>
+                <button id="j">j</button>
+                <button id="k">k</button>
+                <button id="l">l</button>
+                <button id="ene">ñ</button>
+                <button class="up">^</button>
+                <button class="otherWayAccent">`</button>
+                <br/>
+                <button class="mayus">Mayús</button>
+                <button class="diamonds">&#60;</button>
+                <button id="z">z</button>
+                <button id="x">x</button>
+                <button id="c">c</button>
+                <button id="v">v</button>
+                <button id="b">b</button>
+                <button id="n">n</button>
+                <button id="m">m</button>
+                <button id="coma">,</button>
+                <button id="dot">.</button>
+                <button id="script">-</button>
+                <button class="arrowUp">⬆️</button>
+                <button class="mayusRight">Mayús</button>
+                <button class="supr">Supr</button>
+                <br/>
+                <button class="function">Fn</button>
+                <button class="ctrl">Ctrl</button>
+                <button class="alt">Alt</button>
+                <button id="space" style="width: 110px; height: 20px; margin-top: 2px;"></button>
+                <button class="altgr">AltGr</button>
+                <button class="ctrlRight">Ctrl</button>
+                <button class="arrowLeft">⬅️</button>
+                <button class="arrowDown">⬇️</button>
+                <button class="arrowRight">➡️</button>
+                <br/>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="ej4.js"></script>
+</body>
+</html>
