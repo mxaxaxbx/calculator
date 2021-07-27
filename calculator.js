@@ -12,6 +12,20 @@ const zero  = document.getElementById("zero");
 const point = document.getElementById("point");
 // clear input
 const clear = document.getElementById("clear");
+// op buttons
+const percent   = document.getElementById('per');
+const divide    = document.getElementById('div');
+const multiply  = document.getElementById('mul');
+const substract = document.getElementById('sub');
+const add       = document.getElementById('add');
+// equal button
+const equal = document.getElementById('equal');
+// pi button
+const pi = document.getElementById('pi');
+
+
+const ops = ['%', '/', '*', '-', '+'];
+const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
 // input operaciones y resultado
 const op = document.getElementById("op");
@@ -21,14 +35,34 @@ const res = document.getElementById("res");
 const setOpStr = ( val="" ) => {
     // ultimo valor de la pantalla de op
     const lastVal = op.value[ op.value.length - 1];
+    const isOpVal = ops.find( op => op === val );
+    const isLastOpVal = ops.find( op => op === lastVal );
+
+    if( val === '.' && !lastVal) return;
+
+    if( isOpVal ) {
+        if( isLastOpVal || op.val === '.' ) op.value = op.value.slice(0, -1);
+    }
     
-    // si se repite punto no continuar
-    if( val === "." ) {
-        const numArr = op.value.split(".");
-        if( numArr.length > 1 ) return;
+    if( lastVal === '.' && val === '.' ) return;
+    if( isLastOpVal && val === '.') op.value = op.value.slice(0, -1);
+    if( lastVal === '.' && isOpVal ) op.value = op.value.slice(0, -1);
+
+    if( val === "pi") {
+        if( lastVal === "0" || lastVal === "1" || lastVal === "2" || lastVal === "3" || lastVal === "4" || lastVal === "5" || lastVal === "6" || lastVal === "7" || lastVal === "8" || lastVal === "9" ) {
+            op.value = op.value.slice(0, -1);
+        }
+
+        val = Math.PI;
     }
     
     op.value += val;
+}
+
+// limpiar operación
+const doOperation = () => {
+    const result = eval( op.value );
+    res.value = result;
 }
 // limpiar input de operaciones y resultadi
 const clearOpResInput = () => {
@@ -48,7 +82,19 @@ eight.onclick = function() { setOpStr('8') };
 nine.onclick  = function() { setOpStr('9') };
 zero.onclick  = function() { setOpStr('0') };
 point.onclick = function() { setOpStr('.') };
-
+// numero pi
+pi.onclick = function() { setOpStr('pi') };
+// eventos operaciones
+add.onclick       = function() { setOpStr('+') };
+substract.onclick = function() { setOpStr('-') };
+multiply.onclick  = function() { setOpStr('*') };
+divide.onclick    = function() { setOpStr('/') };
+percent.onclick   = function() { setOpStr('%') };
+// equal button
+equal.onclick = function() {
+    doOperation();
+}
+// evento limpiar pantalla
 clear.onclick = function() {
     clearOpResInput();
 }
