@@ -23,7 +23,6 @@ const equal = document.getElementById('equal');
 // pi button
 const pi = document.getElementById('pi');
 
-
 const ops = ['%', '/', '*', '-', '+'];
 const nums = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
@@ -98,3 +97,33 @@ equal.onclick = function() {
 clear.onclick = function() {
     clearOpResInput();
 }
+
+while(true) {
+    let res = 0;
+    let val1 = prompt("Ingrese valor 1");
+    let val2 = prompt("Ingrese valor 2");
+    const op = prompt(`
+        1. sumar
+        2. restar
+        3. multiplicar
+        4. dividir
+        5. salir
+    `);
+
+    if( op === "5" ) break;
+
+    val1 = parseFloat(val1);
+    val2 = parseFloat(val2);
+
+    if( op === "4" ) {
+        if( val2 === 0 ) res = Number.POSITIVE_INFINITY;
+        else res = val1 / val2;
+
+    }
+    else if( op === "3" ) res = val1 * val2;
+    else if( op === "2" ) res = val1 - val2;
+    else if( op === "1" ) res = val1 + val2;
+
+    alert(`Resultado = ${res}`);
+}
+
